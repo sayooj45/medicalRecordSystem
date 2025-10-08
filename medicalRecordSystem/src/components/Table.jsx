@@ -21,8 +21,8 @@ const Table = ({tableCondition}) => {
             patient?.FullName?.toLowerCase().includes(patientSearch.toLowerCase())
         )
 
-        const patientDelete = async(PatientId)=>{
-          console.log(PatientId);
+        const patientDelete = async(UserName)=>{
+          console.log(UserName);
           
           try {
             const res = await fetch('/api/admin/patient',{
@@ -31,17 +31,19 @@ const Table = ({tableCondition}) => {
              headers: {
             'Content-Type': 'application/json'
             },
-            body:JSON.stringify({PatientId})
+            body:JSON.stringify({UserName})
 
           })
           
           
         if (!res.ok) {
+          alert('Something went wrong ')
           throw new Error('cant delete data');
         }
           const data = await res.json()
           console.log('successfully patient deleted ',data);
-          navigate('/adminDashboard')
+          // navigate('/adminDashboard')
+          window.location.reload();
           
           } catch (error) {
             console.log(error);
@@ -67,11 +69,13 @@ const Table = ({tableCondition}) => {
           
           
         if (!res.ok) {
+          alert('Something went wrong ')
           throw new Error('cant delete data');
         }
           const data = await res.json()
           console.log('successfully hospital deleted ',data);
-          navigate('/adminDashboard')
+          // navigate('/adminDashboard')
+          window.location.reload();
           
           } catch (error) {
             console.log(error);
@@ -176,7 +180,7 @@ const Table = ({tableCondition}) => {
             </td>
             <td>
               <button className="border border-red-500 text-red-500 bg-[white] p-1 w-[75px] rounded-lg hover:bg-red-500 hover:text-white duration-300"
-              onClick={()=>{patientDelete(data.PatientId)}}>
+              onClick={()=>{patientDelete(data.UserName)}}>
                 Delete
               </button>
             </td>

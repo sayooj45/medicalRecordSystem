@@ -81,18 +81,21 @@ const PatientSignup = () => {
               className=" text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-hidden focus:text-black"
               placeholder="Full Name"
               onChange={(e)=>setFullName(e.target.value)}
+              required
             />
             <input
               type="text"
               className=" text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder="User Name"
               onChange={(e)=>setUserName(e.target.value)}
+              required
             />
             <input
               type="email"
               className=" text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder=" Email"
               onChange={(e)=>setEmail(e.target.value)}
+              required
             />
             
             <input
@@ -102,19 +105,22 @@ const PatientSignup = () => {
               className=" text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder="Phone Number"
               onChange={(e)=>setPhoneNumber(e.target.value)}
+              required
             />
             <input
               type="number" min={1}
               className=" text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder="Age"
               onChange={(e)=>setAge(e.target.value)}
+              required
             />
             <select name="" id="" value={selected}  onChange={(e) => {setSelected(e.target.value)
               setGender(e.target.value)
             } }
             className={`text-[24px] border-b border-[#807A7A] mt-[20px] w-full focus:outline-none
             ${selected === "" ? "text-[#807A7A]" : "text-[#474545]"}` 
-            }>
+            }
+            required>
               <option value="" disabled hidden >Gender</option>
               <option value="Male" >Male</option>
               <option value="Female"  >Female</option>
@@ -124,12 +130,14 @@ const PatientSignup = () => {
               className=" text-[24px] border-b border-b-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder="Address"
               onChange={(e)=>setAddress(e.target.value)}
+              required
             />
             <input
               type="password"
               className=" text-[24px] border-b border-b-[#807A7A] mt-[20px] w-full focus:outline-hidden"
               placeholder=" Password"
               onChange={(e)=>setPassword(e.target.value)}
+              required
             />
           </div>
           <div className="text-center">

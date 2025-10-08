@@ -54,69 +54,67 @@ const PatientDetailsForm = () => {
             <div className="mt-[25px]">
               <label htmlFor="firstName" className="text-[#807A7A] text-[20px] font-medium">Heart Rate</label>
               <br />
-              <input type="text" name="firstName" id="firstName" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="firstName" id="firstName" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setHeartRate(e.target.value)}}/>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="bloodGroup" className="text-[#807A7A] text-[20px] font-medium">Blood Group</label>
               <br />
-              <select name="bloodGroup" id="bloodGroup" className="bg-[#D9D9D9] rounded-lg h-[33px] w-full"
+              <select name="bloodGroup" id="bloodGroup" className="bg-[#D9D9D9] rounded-lg h-[33px] w-full px-2"
               onChange={(e)=>{setBloodGroup(e.target.value)}}>
                 <option value="O+">O+</option>
-                <option value="O">O-</option>
+                <option value="O-">O-</option>
                 <option value="A+">A+</option>
-                <option value="A">A-</option>
+                <option value="A-">A-</option>
+                <option value="O+">B+</option>
+                <option value="O-">B-</option>
+                <option value="A+">AB+</option>
+                <option value="A-">AB-</option>
               </select>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="age" className="text-[#807A7A] text-[20px] font-medium">Glucose</label><br />
-              <input type="text" name="age" id="age" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="age" id="age" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setGlucose(e.target.value)}}/>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="height" className="text-[#807A7A] text-[20px] font-medium">Height</label><br />
-              <input type="text" name="height" id="height" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="height" id="height" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setHeight(e.target.value)}}/>
             </div>
 
-            {/* <div className="mt-[25px]">
-              <label htmlFor="email" className="text-[#807A7A] text-[20px] font-medium">glucose</label><br />
-              <input type="email" name="email" id="email" className="bg-[#D9D9D9] rounded-lg h-[33px]" />
-            </div> */}
+
           </div>
 
           <div>
             <div className="mt-[25px]">
               <label htmlFor="lastName" className="text-[#807A7A] text-[20px] font-medium">Temperature</label><br />
-              <input type="text" name="lastName" id="lastName" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="lastName" id="lastName" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setTemperature(e.target.value)}}/>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="allergies" className="text-[#807A7A] text-[20px] font-medium">Allergies</label><br />
-              <input type="text" name="allergies" id="allergies" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="allergies" id="allergies" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setAllergies(e.target.value)}}/>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="diseases" className="text-[#807A7A] text-[20px] font-medium">Diseases</label><br />
-              <input type="text" name="diseases" id="diseases" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="diseases" id="diseases" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setDisease(e.target.value)}}/>
             </div>
 
             <div className="mt-[25px]">
               <label htmlFor="weight" className="text-[#807A7A] text-[20px] font-medium">Weight</label><br />
-              <input type="text" name="weight" id="weight" className="bg-[#D9D9D9] rounded-lg h-[33px]" 
+              <input type="text" name="weight" id="weight" className="bg-[#D9D9D9] rounded-lg h-[33px] px-2" 
               onChange={(e)=>{setWeight(e.target.value)}}/>
             </div>
 
-            {/* <div className="mt-[25px]">
-              <label htmlFor="phone" className="text-[#807A7A] text-[20px] font-medium">glucose</label><br />
-              <input type="text" name="phone" id="phone" className="bg-[#D9D9D9] rounded-lg h-[33px]" />
-            </div> */}
+
           </div>
         </div>
 

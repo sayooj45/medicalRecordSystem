@@ -94,7 +94,7 @@ const HospitalForm = () => {
                   <textarea
                     value={about}
                     onChange={(e) => setAbout(e.target.value)}
-                    className="bg-[#D9D9D9] rounded-lg h-[80px] w-full"
+                    className="bg-[#D9D9D9] rounded-lg h-[80px] w-full px-2"
                   ></textarea>
                 </div>
                 <div className="mt-[20px]">
@@ -105,21 +105,21 @@ const HospitalForm = () => {
                     type="text"
                     value={website}
                     onChange={(e) => setWebsite(e.target.value)}
-                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full"
+                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full px-2"
                   />
                 </div>
               </div>
 
               <div className="w-[45%]">
                 <div className="mt-[20px]">
-                  <label className="text-[#807A7A] text-[20px] font-medium">
+                  <label className="text-[#807A7A] text-[20px] font-medium ">
                     Specialties
                   </label>
                   <input
                     type="text"
                     value={specialties}
                     onChange={(e) => setSpecialties(e.target.value)}
-                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full"
+                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full px-2"
                   />
                 </div>
                 <div className="mt-[20px]">
@@ -130,7 +130,7 @@ const HospitalForm = () => {
                     type="text"
                     value={facilities}
                     onChange={(e) => setFacilities(e.target.value)}
-                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full"
+                    className="bg-[#D9D9D9] rounded-lg h-[33px] w-full px-2"
                   />
                 </div>
               </div>

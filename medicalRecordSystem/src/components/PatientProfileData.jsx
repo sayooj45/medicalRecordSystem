@@ -109,14 +109,7 @@ const showPriscription =(imgSrc)=>{
             <div
               className="bg-white w-[300px] h-[200px] flex flex-col justify-center items-center rounded-2xl relative"
             >
-              {/* {
-                role === 'patent'?
-                <img
-                src={pen}
-                alt=""
-                className="absolute top-5 right-5 h-[30px] mx-auto"
-              />:''
-              } */}
+              
               <img
                 src={cardiogram}
                 alt="image"
@@ -130,14 +123,7 @@ const showPriscription =(imgSrc)=>{
             <div
               className="bg-white w-[300px] h-[200px] flex flex-col justify-center items-center rounded-2xl relative"
             >
-              {/* {
-                loginDetails?(loginDetails.role === 'patent'?
-                <img
-                src={pen}
-                alt=""
-                className="absolute top-5 right-5 h-[30px] mx-auto"
-              />:''):''
-              } */}
+              
               <img
                 src={body}
                 alt="image"
@@ -149,14 +135,7 @@ const showPriscription =(imgSrc)=>{
             <div
               className="bg-white w-[300px] h-[200px] flex flex-col justify-center items-center rounded-2xl relative"
             >
-              {/* {
-                role === 'patent'?
-                <img
-                src={pen}
-                alt=""
-                className="absolute top-5 right-5 h-[30px] mx-auto"
-              />:''
-              } */}
+              
               <img
                 src={glucose}
                 alt="image"
@@ -167,18 +146,21 @@ const showPriscription =(imgSrc)=>{
             </div>
           </div>
 
-{/* ====== TEST REPORT SECTION ====== */}
+
 <div className="bg-white p-5 rounded-2xl mt-[50px] mx-[60px] w-[1100px] ">
-  <div className="flex justify-between items-baseline">
+  {
+    loginDetails? loginDetails.role === 'admin'?'':
+    <div className="flex justify-between items-baseline">
     <h1 className="text-[24px] font-bold mb-5">Test Report</h1>
     <button onClick={() => setIsHide(!isHide)}>
       <img src={add} alt="add" className="h-[20px]" />
     </button>
-  </div>
+  </div>:''
+  }
 
-  {/* SLIDER CONTAINER */}
+
   <div className="relative w-full flex justify-center items-center overflow-hidden">
-    {/* Left Button */}
+  
     <button
       onClick={() => setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0))}
       disabled={currentIndex === 0}
@@ -187,7 +169,7 @@ const showPriscription =(imgSrc)=>{
       ❮
     </button>
 
-    {/* Slider Track */}
+  
     <div className="overflow-hidden w-[90%]">
       <div
         className="flex gap-5 transition-transform duration-500 ease-in-out"
@@ -211,7 +193,7 @@ const showPriscription =(imgSrc)=>{
       </div>
     </div>
 
-    {/* Right Button */}
+    
     <button
       onClick={() =>
         setCurrentIndex((prev) =>

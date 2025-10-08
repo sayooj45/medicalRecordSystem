@@ -74,7 +74,7 @@ const HosspitalPatients = () => {
           <th className="rounded-l-lg">Patient Name</th>
           <th>Gender</th>
           <th>Age</th>
-          <th >ID</th>
+          {/* <th >ID</th> */}
           <th className="rounded-r-lg"></th>
           
         </tr>
@@ -90,7 +90,7 @@ const HosspitalPatients = () => {
             <td className="rounded-l-lg">{data.UserName}</td>
             <td>{data.Gender}</td>
             <td>{data.Age}</td>
-            <td>{data.PatientId}</td>
+            {/* <td>{data.PatientID}</td> */}
             <td>
 
               <button className="border border-[#66D0C6] text-[#66D0C6] bg-[white] p-1 w-[75px] rounded-lg hover:bg-[#66D0C6] hover:text-white duration-300">
@@ -107,7 +107,7 @@ const HosspitalPatients = () => {
             <td className="rounded-l-lg">{data.UserName}</td>
             <td>{data.Gender}</td>
             <td>{data.Age}</td>
-            <td>{data.PatientId}</td>
+            {/* <td>{data.PatientID}</td> */}
             <td>
 
               <button className="border border-[#66D0C6] text-[#66D0C6] bg-[white] p-1 w-[75px] rounded-lg hover:bg-[#66D0C6] hover:text-white duration-300">

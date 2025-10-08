@@ -93,17 +93,17 @@ admin.delete('/admin/patient',authentication,adminCheck, async (req, res) => {
   try {
     console.log(req.body);
 
-    const { PatientId } = req.body;
+    const { UserName } = req.body;
 
-    const patient = await patientDetails.findOne({ PatientId });
-    const signupUser = await signup.findOne({ PatientId });
+    const patient = await patientDetails.findOne({ UserName });
+    const signupUser = await signup.findOne({ UserName });
 
     if (patient || signupUser) {
       if (patient) {
-        await patientDetails.findOneAndDelete({ PatientId });
+        await patientDetails.findOneAndDelete({ UserName });
       }
       if (signupUser) {
-        await signup.findOneAndDelete({ PatientId });
+        await signup.findOneAndDelete({ UserName });
       }
 
       console.log('successfully deleted');

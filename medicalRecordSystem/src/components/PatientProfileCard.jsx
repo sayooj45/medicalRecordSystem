@@ -57,10 +57,10 @@ const PatientProfileCard = ({cardDetails,patientData}) => {
               <h1 className="font-semibold">Weight :</h1>
               <h1 className="text-[#807A7A] pl-2">{loginDetails?(cardDetails?cardDetails.weight:patientData?(patientData.Weight):''):''}</h1>
             </div>
-            <div className="flex my-5">
+            {/* <div className="flex my-5">
               <h1 className="font-semibold">Patient ID :</h1>
               <h1 className="text-[#807A7A] pl-2">{loginDetails?(cardDetails?cardDetails.patientId:patientData?(patientData.PatientID):''):''}</h1>
-            </div>
+            </div> */}
           </div>
         </div>
   )

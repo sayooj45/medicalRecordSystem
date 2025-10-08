@@ -29,40 +29,7 @@ const [prescription,setprescription] = useState()
     const {UserName} = useParams()
     console.log(UserName);
     
-    // useEffect(()=>{
-    //     const fetchPatientDetails = async()=>{
-    //         try {
-    //             const res = await fetch(`/api/admin/singlePatient?PatientId=${encodeURIComponent(PatientId)}`)
-    //         if(!res.ok){
-    //             throw new Error("Failed to fetch patient details!")
-    //         }
-    //         const data = await res.json()
-    //         if(!data || !data.UserName){
-    //             throw new Error('user not found!')
-    //         }
-    //         console.log(data);
-    //         setFullName(data.FullName)
-    //         setAge(data.Age)
-    //         setGender(data.Gender)
-    //         setBloodGroup(data.BloodGroup)
-    //         setAllergies(data.Alergies)
-    //         setDisease(data.Dieseases)
-    //         setHeight(data.Height)
-    //         setWeight(data.Weight)
-    //         setDp(data.Image)
-    //         setHeartRate(data.HartRate)
-    //         setTemerature(data.Temperature)
-    //         setGlucose(data.Glucose)
-    //         setTestReport(data.TestReports)
-    //         setprescription(data.Prescription)
-    //         } catch (error) {
-    //             console.log(error);
-                
-    //         }
-            
-    //     }
-    //     fetchPatientDetails()
-    // },[]) 
+    
 
      useEffect(()=>{
         const fetchPatientDetails = async()=>{

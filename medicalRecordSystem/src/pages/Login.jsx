@@ -28,12 +28,12 @@ const Login = () => {
 
       if (data.role === "hospital") {
         console.log(data);
-        navigate(`/hospitalDashboard/${data.userName}`);
+        navigate('/hospitalForm');
       } else if (data.role === "admin") {
         navigate("/adminDashboard");
       } else if (data.role === "patient") {
         console.log(data);
-        navigate(`/patientProfile/${data.userName}`);
+        navigate(`/patientForm`);
       } else {
         navigate("/login");
       }
@@ -46,11 +46,11 @@ const Login = () => {
   useEffect(() => {
     if (loginDetails) {
       if (loginDetails.role === "hospital") {
-        navigate(`/hospitalDashboard/${loginDetails.userName}`);
+        navigate('/hospitalForm');
       } else if (loginDetails.role === "admin") {
         navigate("/adminDashboard");
       } else if (loginDetails.role === "patient") {
-        navigate(`/patientProfile/${loginDetails.userName}`);
+        navigate(`/patientForm`);
       }
     }
   }, [loginDetails, navigate]);

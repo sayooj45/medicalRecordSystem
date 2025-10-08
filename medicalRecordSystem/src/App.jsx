@@ -46,6 +46,7 @@ const router = createBrowserRouter([
     path:'/adminDashboard',
     element:<AdminDashboard/>
   },
+   
     ]
   },
   {
@@ -56,10 +57,7 @@ const router = createBrowserRouter([
   {
     element:<Protected role = 'patient'/>,
     children:[
-      {
-    path:'/patientProfile/:userName',
-    element:<PatientProfile/>
-  },
+     
   {
     path:'/patientForm',
     element:<PatientForm/>
@@ -77,10 +75,7 @@ const router = createBrowserRouter([
   {
     element:<Protected role = 'hospital'/>,
     children:[
-      {
-    path:'/hospitalDashboard/:userName',
-    element:<HospitalDetails/>
-  },
+     
   {
     path:'/hospitalForm',
     element:<HospitalForm/>
@@ -107,6 +102,22 @@ const router = createBrowserRouter([
       {
     path:'/message',
     element:<Messages/>
+  },
+  {
+    path:'/patientProfile/:UserName',
+    element:<PatientProfile/>
+  },
+  {
+    path:'/hospitalDashboard/:UserName',
+    element:<HospitalDetails/>
+  },
+   {
+    path:'/patientProfile/:UserName',
+    element:<PatientProfile/>
+  },
+   {
+    path:'/hospitalDashboard/:UserName',
+    element:<HospitalDetails/>
   },
     ]
   }
