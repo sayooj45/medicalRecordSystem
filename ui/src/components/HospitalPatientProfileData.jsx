@@ -10,6 +10,10 @@ const HospitalPatientProfileData = ({patientData}) => {
     const [isHide,setIsHide] = useState(false)
     const [pres,setPres] =useState(false)
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPriscription,setIsPriscription] = useState(false)
+      const [isTestReport,setIsTestReport] = useState(false)
+       const [selectedReport, setSelectedReport] = useState(null);
+         const [selectedPrescription, setSelectedPrescription] = useState(null);
 
 //   const {loginDetails} = useContext(LoginContext) 
   const [title,setTitle] = useState()
@@ -76,6 +80,15 @@ const prescriptionSubmit = async (userName) => {
     console.log("Error:", error);
   }
 };
+
+const showTestReport =(imgSrc)=>{
+  setSelectedReport(imgSrc);
+  setIsTestReport(!isTestReport)
+}
+const showPriscription =(imgSrc)=>{
+  setSelectedPrescription(imgSrc);
+  setIsPriscription(!isPriscription)
+}
   return (
     <div className="w-full">
               <div className="flex justify-around w-[1100px]  ">
@@ -119,7 +132,7 @@ const prescriptionSubmit = async (userName) => {
                 </div>
               </div>
     
-{/* ====== TEST REPORT SECTION ====== */}
+
 <div className="bg-white p-5 rounded-2xl mt-[50px] mx-[60px] w-[1100px] ">
   <div className="flex justify-between items-baseline">
     <h1 className="text-[24px] font-bold mb-5">Test Report</h1>
@@ -128,9 +141,9 @@ const prescriptionSubmit = async (userName) => {
     </button>
   </div>
 
-  {/* SLIDER CONTAINER */}
+
   <div className="relative w-full flex justify-center items-center overflow-hidden">
-    {/* Left Button */}
+  
     <button
       onClick={() => setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0))}
       disabled={currentIndex === 0}
@@ -139,7 +152,7 @@ const prescriptionSubmit = async (userName) => {
       ❮
     </button>
 
-    {/* Slider Track */}
+  
     <div className="overflow-hidden w-[90%]">
       <div
         className="flex gap-5 transition-transform duration-500 ease-in-out"
@@ -152,7 +165,8 @@ const prescriptionSubmit = async (userName) => {
             key={index}
             className="flex min-w-[300px] flex-shrink-0 bg-[#F9F9F9] p-4 rounded-xl shadow justify-center items-center"
           >
-            <img src={`data:image/png;base64,${data.File}`} alt="report" className="h-[50px] w-[50px]" />
+            <img src={`data:image/png;base64,${data.File}`} alt="report" className="h-[50px] w-[50px]" 
+            onClick={()=>{showTestReport(`data:image/png;base64,${data.File}`)}}/>
             <div className="ml-3">
               <h1 className="text-[20px] font-bold">{data.Title}</h1>
               <h2 className="text-[#807A7A] text-[16px]">{new Date(data.Date).toISOString().split('T')[0]}</h2>
@@ -162,7 +176,7 @@ const prescriptionSubmit = async (userName) => {
       </div>
     </div>
 
-    {/* Right Button */}
+    
     <button
       onClick={() =>
         setCurrentIndex((prev) =>
@@ -235,6 +249,57 @@ const prescriptionSubmit = async (userName) => {
   </div>
 )}
 
+
+{isTestReport && (
+  <div className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-2xl bg-black/30">
+    <div className="p-10 bg-white rounded-lg shadow-lg w-[600px] max-w-[90%]">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-[#807A7A] text-[20px] font-medium">Test Report</h1>
+        <button
+          onClick={() => {setIsTestReport(false)
+            setSelectedReport(null);
+          }
+            
+          }
+          className="text-gray-500 hover:text-gray-700 text-[20px] font-bold"
+        >
+          ✕
+        </button>
+      </div>
+        <img
+        src={selectedReport}
+        alt="Test Report"
+        className="w-full rounded-lg object-contain max-h-[400px]"
+      />
+      
+    </div>
+  </div>
+)}
+{isPriscription && (
+  <div className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-2xl bg-black/30">
+    <div className="p-10 bg-white rounded-lg shadow-lg w-[600px] max-w-[90%]">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-[#807A7A] text-[20px] font-medium">Test Report</h1>
+        <button
+          onClick={() => {setIsPriscription(false)
+            setSelectedPrescription(null);
+          }
+            
+          }
+          className="text-gray-500 hover:text-gray-700 text-[20px] font-bold"
+        >
+          ✕
+        </button>
+      </div>
+        <img
+        src={selectedPrescription}
+        alt="Test Report"
+        className="w-full rounded-lg object-contain max-h-[400px]"
+      />
+      
+    </div>
+  </div>
+)}
 
 {pres && (
   <div className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-2xl bg-black/30">
@@ -331,6 +396,7 @@ const prescriptionSubmit = async (userName) => {
                             src={`data:image/png;base64,${data.File}`}
                             alt="img"
                             className="h-[20px] w-[20px]"
+                            onClick={()=>{showPriscription(`data:image/png;base64,${data.File}`)}}
                           />
                           <span>{data.Title}</span>
                         </div>

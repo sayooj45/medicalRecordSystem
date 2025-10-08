@@ -15,7 +15,7 @@ app.use('/',router)
 app.use('/',user)
 app.use('/',hospital)
 app.use('/',admin)
-mongoose.connect('mongodb://localhost:27017/MedicalRecordSystem').then(()=>{
+mongoose.connect('mongodb://mongodb:27017/MedicalRecordSystem').then(()=>{
     console.log('mongoDB connected ');
     
 })

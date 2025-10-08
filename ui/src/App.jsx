@@ -21,7 +21,7 @@ import Protected from './routes/Protected'
 import ErrorPage from './pages/ErrorPage'
 
 function App() {
-
+ 
 const router = createBrowserRouter([
   {
     path:'/',
